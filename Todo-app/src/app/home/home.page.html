@@ -35,11 +35,17 @@
         <p>Complete</p>
       </ion-item>
 
-      <ion-item>
+      <ion-item button (click)="delete(i)">
         <ion-icon name="trash"></ion-icon>
         <p>Cancel</p>
       </ion-item>
 
     </ion-row>
   </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="addTask()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>
