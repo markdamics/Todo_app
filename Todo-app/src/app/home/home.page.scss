@@ -1,7 +1,3 @@
-ion-content{
-  --background: #F5F5F5;
-}
-
 p{
   font-size: 16px;
   line-height: 22px;
@@ -9,6 +5,23 @@ p{
   margin: 0;
 }
 
-ion-header{
-  --background: #F5F5F5;
+.showdate ion-label{
+  text-align: center;
 }
+
+.showdate ion-button{
+  color: var(--ion-color-light-contrast)
+}
+
+ion-header ion-title{
+  text-align: center;
+  z-index: 2;
+}
+
+ion-header ion-buttons{
+  z-index: 1;
+  margin: auto;
+}
+
+
+

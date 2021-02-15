@@ -9,13 +9,28 @@ import { ModalController } from '@ionic/angular';
 })
 export class HomePage {
 
-  todoList = []
+  todoList = [{
+    taskname: 'Coding',
+    taskdate: '2021-02-15T12:00',
+    tasknote: 'coding conding and coding'
+  },
+  {
+    taskname: 'workout',
+    taskdate: '2021-02-15T09:00',
+    tasknote: 'Back and biceps'
+  },
+  {
+    taskname: 'Shopping',
+    taskdate: '2021-02-15T16:00',
+    tasknote: 'vegetables and fruits'
+  }
+  ]
 
   today : number = Date.now()
 
   constructor(public modalCtrl: ModalController) {}
 
-  async addTask(){
+  /*async addTask(){
     const modal = await this.modalCtrl.create({
       component: NewTaskPage
     })
@@ -29,6 +44,6 @@ export class HomePage {
 
   delete(index){
     this.todoList.splice(index,1)
-  }
+  }*/
 
 }

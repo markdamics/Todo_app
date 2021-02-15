@@ -8,12 +8,12 @@
 <ion-content>
   <ion-card>
     <ion-item>
-      <ion-textarea [(ngModel)]="addtaskName" placeholder="Your task name"></ion-textarea>
+      <ion-textarea [(ngModel)]="newtaskName" placeholder="Your task name"></ion-textarea>
     </ion-item>
 
     <ion-item>
       <ion-label >Priority</ion-label>
-      <ion-select [(ngModel)]="addtaskPrio">
+      <ion-select [(ngModel)]="newtaskPrio">
         <ion-select-option value="low">Low</ion-select-option>
         <ion-select-option value="middle">Middle</ion-select-option>
         <ion-select-option value="high" selected>High</ion-select-option>
@@ -23,13 +23,13 @@
     <ion-item>
       <ion-icon name="calendar-outline" slot="start"></ion-icon>
       <ion-label>Date</ion-label>
-      <ion-datetime [(ngModel)]="addtaskDate" displayFormat="D MMM YYYY H:mm"></ion-datetime>
+      <ion-datetime [(ngModel)]="newtaskDate" displayFormat="D MMM YYYY H:mm"></ion-datetime>
     </ion-item>
 
     <ion-item>
       <ion-icon name="pricetag-outline" slot="start"></ion-icon>
       <ion-label>Category</ion-label>
-      <span >{{addtaskCategory}}</span>
+      <span >{{newtaskCategory}}</span>
     </ion-item>
 
 

@@ -1,47 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-item lines="none">
-      <ion-label style="font-weight: 800;font-size: 3em;">
-        Today
-        <p style="font-weight: 400;"> {{today | date:'fullDate'}}</p>
-      </ion-label>
-    </ion-item>
+    <ion-buttons slot="start">
+        <ion-icon slot="end" name="menu-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Tasks</ion-title>
   </ion-toolbar>
 </ion-header>
 
+<!--<ion-card *ngFor="let item of todoList" class="ion-margin">-->
+
 <ion-content [fullscreen]="true">
+  <div class="showdate">
+    <ion-item lines="none">
+      <ion-button fill="clear">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+      <ion-label>
+        <h1>Today</h1>
+        <p>{{today | date:'fullDate'}}</p>
+      </ion-label>
+      <ion-button fill="clear">
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </div>
 
-  <ion-card *ngFor="let item of todoList" class="ion-margin">
-    <ion-card-header>
-      <ion-card-subtitle [style.color]="item.taskPrio === 'high' ? 'red' : (item.taskPrio === 'low' ? 'green' : 'blue')">
-        {{item.taskCat}}
-      </ion-card-subtitle>
-
+  <ion-card *ngFor="let item of todoList">
       <ion-item>
-        <!--<ion-icon size="small" name="ellipse"></ion-icon>-->
-        <ion-label>{{item.taskName}}</ion-label>
+        <ion-label slot="start">{{item.taskname}}</ion-label>
+        <ion-label slot="end">{{item.taskdate | date:'H:mm'}}</ion-label>
       </ion-item>
-
-    </ion-card-header>
-
-    <ion-card-content>
-      <ion-label>Due {{item.taskDate | date:'fullDate'}}</ion-label>
-    </ion-card-content>
-
-    <ion-row>
-
-      <ion-item>
-        <ion-icon name="checkmark-done"></ion-icon>
-        <p>Complete</p>
-      </ion-item>
-
-      <ion-item button (click)="delete(i)">
-        <ion-icon name="trash"></ion-icon>
-        <p>Cancel</p>
-      </ion-item>
-
-    </ion-row>
   </ion-card>
+
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="addTask()">

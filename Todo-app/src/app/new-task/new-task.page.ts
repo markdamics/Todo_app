@@ -10,10 +10,10 @@ export class NewTaskPage implements OnInit {
 
   categories = ['work', 'personal', 'home']
 
-  addtaskName
-  addtaskDate
-  addtaskPrio
-  addtaskCategory
+  newtaskName
+  newtaskDate
+  newtaskPrio
+  newtaskCategory
 
   taskObject
   constructor(public modalCtrl: ModalController) { }
@@ -26,15 +26,15 @@ export class NewTaskPage implements OnInit {
   }
 
   selectedCategory(index){
-    this.addtaskCategory = this.categories[index]
-    console.log(this.addtaskCategory)
+    this.newtaskCategory = this.categories[index]
+    console.log(this.newtaskCategory)
   }
 
   addTask(){
-    this.taskObject = ({taskName:this.addtaskName,
-                        taskDate:this.addtaskDate,
-                        taskPrio:this.addtaskPrio,
-                        taskCat:this.addtaskCategory})
+    this.taskObject = ({taskName:this.newtaskName,
+                        taskDate:this.newtaskDate,
+                        taskPrio:this.newtaskPrio,
+                        taskCategory:this.newtaskCategory})
 
     this.dismiss()
   }
